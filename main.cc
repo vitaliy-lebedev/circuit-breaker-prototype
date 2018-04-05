@@ -13,14 +13,14 @@ int main() {
 
     //Check if account is not locked
     if (circuit_breaker.AllowAccountId(evil_account)) {
-        std::cout << "cre will give second chance to this account" << std::endl;
+        std::cout << "We are trying to lock account and get timeout." << std::endl;
         //Add one more timeout incident
          circuit_breaker.AddIncident(evil_account);
     }
     
      //Check if account is still not locked
      if (circuit_breaker.AllowAccountId(evil_account)) {
-        std::cout << "cre will give third chance to this account" << std::endl;
+        std::cout << "We are trying to lock account and get timeout." << std::endl;
         //Add one more timeout incident
          circuit_breaker.AddIncident(evil_account);
     }
